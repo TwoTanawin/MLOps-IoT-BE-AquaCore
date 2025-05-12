@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: aquaCore
+
+  r2dbc:
+    url: r2dbc:postgresql://ec2-54-255-246-73.ap-southeast-1.compute.amazonaws.com:5432/aqua_db
+    username: admin
+    password: password
+
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://ec2-54-255-246-73.ap-southeast-1.compute.amazonaws.com:5432/aqua_db
+    user: admin              # ? should be 'user', not 'username'
+    password: password
+    baseline-on-migrate: true
+
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8081
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
